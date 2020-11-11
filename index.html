@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row" id="input-row">
+        <h1 class="col-sm-4" id="titleHeader">Kid Booktivist</h1>
+        <div class="col-sm-5">
+          <input
+            class="input-group"
+            id="searchInput"
+            placeholder=" Search By Title, Author, or Keyword"
+          />
+          <button id="searchButton">Search</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <button
+            v-if="categorySelected"
+            class="btn"
+            type="button"
+            id="multipleCategoryButton"
+            @click="setSelectMultiple"
+          >
+            Select Multiple
+          </button>
+          <button
+            v-if="selectMultipleCategories"
+            class="btn"
+            type="button"
+            id="multipleCategoryButton"
+            @click="clearSelectedCategories"
+          >
+            Clear
+          </button>
+          <div id="homeCategoryDiv">
+            <button
+              v-for="category in categories"
+              :key="category.id"
+              id="homeCategoryButtons"
+              class="btn"
+              type="button"
+              @click="setCategoryId(category.id)"
+            >
+              {{category.category}}
+            </button>
+          </div>
+        </div>
+        <div class="col-xs-0 col-sm-1"></div>
+        <div class="col-xs-12 col-sm-7" id="booksShow">
+          <div class="row" id="categoryTitle">
+            <h3>{{ selectCategory }}</h3>
+          </div>
+          <div class="row" id="booksRow">
+            <button
+              class="card col-sm-6 col-md-4 col-lg-3"
+              id="homeBookCard"
+              style="width: 18rem"
+              v-for="book in books"
+              :key="book.id"
+            >
+              <div id="bookCoverImg">
+                <div id="bookCoverImg">
+                  <img id="bookCoverImg" :src="book.cover" />
+                </div>
+              </div>
+              <div class="cardText">
+                <div class="card-title">{{book.title}}</div>
+                <div class="card-title" id="cardAuthor">
+                  by: {{book.author}}
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+    <script>
+      let discountPrice = function (price) {
+        return price * 0.85;
+      };
+      discountPrice(100);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "Booktivist_Vue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffejcaplan/Booktivist_Vue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ffejcaplan/Booktivist_Vue/issues"
+  },
+  "homepage": "https://github.com/ffejcaplan/Booktivist_Vue#readme",
+  "devDependencies": {
+    "@prisma/cli": "^2.11.0"
+  }
+}

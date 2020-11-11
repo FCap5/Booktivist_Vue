@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "A Is for Activist",
+    "subtitle": "",
+    "author": "Innosanto Nagara",
+    "cover": "http://books.google.com/books/content?id=BWU4jwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+  },
+  {
+    "id": 2,
+    "title": "Last Stop on Market Street",
+    "subtitle": "",
+    "Author": "Matt de la Peña",
+    "cover": "http://books.google.com/books/content?id=NS3eDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+  }
+]
